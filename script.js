@@ -14,9 +14,9 @@ const CFG = {
   EXTEND: 1.15,                    // sensitivitas jari lurus
   MIN_CUTOFF: 1.2, BETA: 0.02,     // penghalus garis tangan
   BLUR_IN: 0.14, BLUR_OUT: 0.20,   // kecepatan blur masuk / keluar (detik)
-  BLUR_PX: 0.006,                  // kekuatan blur (kali lebar layar, min 10 px, maks 26 px)
+  BLUR_PX: 0.007,                  // kekuatan blur (kali lebar layar, min 10 px, maks 26 px)
   TINT: 0,                      // kekuatan warna pink saat blur
-  LINE: "rgb(255,150,200)", DOT: "#fff"
+  LINE: "rgb(100,200,255)", DOT: "#ffc0d9"
 };
 const MP_VER = "0.10.14";
 const MP_BASE = "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@" + MP_VER;
@@ -149,7 +149,7 @@ async function loadModel() {
   const fileset = await FilesetResolver.forVisionTasks(MP_BASE + "/wasm");
   makeLM = d => HandLandmarker.createFromOptions(fileset, {
     baseOptions: { modelAssetPath: MODEL, delegate: d },
-    runningMode: "VIDEO", numHands: 2,
+    runningMode: "VIDEO", numHands: 1,
     minHandDetectionConfidence: 0.6, minHandPresenceConfidence: 0.6, minTrackingConfidence: 0.6
   });
   try { landmarker = await makeLM("GPU"); } catch (e) { landmarker = await makeLM("CPU"); fellBack = true; }

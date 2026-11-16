@@ -15,7 +15,7 @@ const CFG = {
   MIN_CUTOFF: 1.2, BETA: 0.02,     // penghalus garis tangan
   BLUR_IN: 0.14, BLUR_OUT: 0.20,   // kecepatan blur masuk / keluar (detik)
   BLUR_PX: 0.006,                  // kekuatan blur (kali lebar layar, min 10 px, maks 26 px)
-  TINT: 0.22,                      // kekuatan warna pink saat blur
+  TINT: 0,                      // kekuatan warna pink saat blur
   LINE: "rgb(255,150,200)", DOT: "#fff"
 };
 const MP_VER = "0.10.14";
